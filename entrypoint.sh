@@ -144,7 +144,7 @@ check_additional_files () {
       FIND_CALL+=(';')
 
       set -x
-      "${FIND_CALL[@]}" &>> error.txt
+      "${FIND_CALL[@]}" &>> error.txt || true
       set +x
 
    fi
@@ -208,7 +208,7 @@ else
    FIND_CALL+=(';')
 
    set -x
-   "${FIND_CALL[@]}" &>> error.txt
+   "${FIND_CALL[@]}" &>> error.txt || true
    set +x
 
    check_additional_files
